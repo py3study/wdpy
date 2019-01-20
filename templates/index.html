@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>CMDB系统</title>
+    <script src="/static/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+    $(function () {
+        $('#backup_all').click(function () {
+            var socket = new WebSocket("ws://" + window.location.host + "/echo_once/");
+            console.log(socket);
+            socket.onopen = function () {
+                console.log('WebSocket open');//成功连接上Websocket
+                socket.send($('#backup_all').val());//发送数据到服务端
+            };
+            socket.onmessage = function (e) {
+                console.log('message: ' + e.data);//打印服务端返回的数据
+                //$('#messagecontainer').prepend('<p><pre>' + e.data + '</pre></p>');
+                //$('#messagecontainer').prepend('<hr />');
+                $('#messagecontainer').append(e.data+'<br/>');
+                {#$('#messagecontainer').prepend('<hr />');#}
+
+            };
+        });
+    });
+    </script>
+</head>
+<body>
+{#<br>#}
+<button style="margin: 20px;height: 40px;background-color: #00ff00;" type="button" id="backup_all" value="backup_all">
+    执行Shell脚本
+</button>
+<h3 style="margin: 20px;">脚本执行结果:</h3>
+<div id="messagecontainer" style="margin: 20px;">
+</div>
+<hr/>
+</body>
+</html>
