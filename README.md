@@ -32,5 +32,12 @@ django版本不能是2.1.5，使用websocket，谷歌浏览器会报错
 
 ## 效果图
 
-![Image text](https://github.com/py3study/bmt/blob/master/效果图.png)
+执行脚本
+
+![Image text](https://github.com/py3study/wdpy/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE/%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC.gif)
+
+安装软件
+
+![Image text](https://github.com/py3study/wdpy/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE/%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6.gif)
+
 Copyright (c) 2018-present, xiao You
